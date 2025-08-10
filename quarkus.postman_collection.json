@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "9c99a6ea-8fe2-4aa2-92de-7ae90f622d11",
+		"name": "quarkus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5958574"
+	},
+	"item": [
+		{
+			"name": "tipo-cambio",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/exchange/today?dni=12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"exchange",
+						"today"
+					],
+					"query": [
+						{
+							"key": "dni",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json;charset=UTF-8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/exchange/today?dni=12345678",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exchange",
+								"today"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "12345678"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "content-length",
+							"value": "66"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fecha\": \"2025-08-09\",\n    \"sunat\": 3.5445,\n    \"compra\": 3.538,\n    \"venta\": 3.551\n}"
+				},
+				{
+					"name": "error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json;charset=UTF-8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/exchange/today?dni=12345678",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exchange",
+								"today"
+							],
+							"query": [
+								{
+									"key": "dni",
+									"value": "12345678"
+								}
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "content-length",
+							"value": "115"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"ERR-001\",\n    \"message\": \"Límite de consultas diarias excedido\",\n    \"timestamp\": \"2025-08-09T19:45:01.9447455\"\n}"
+				}
+			]
+		}
+	]
+}
